@@ -1,7 +1,6 @@
-package com.genesis.collector.mongo.template.model;
+package com.genesis.origin.mongo.repository.model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @Author: KG
@@ -10,7 +9,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @Modified by:
  */
 
-@Document(collection = "jobs")
 public class Job {
     @Id
     private String id;

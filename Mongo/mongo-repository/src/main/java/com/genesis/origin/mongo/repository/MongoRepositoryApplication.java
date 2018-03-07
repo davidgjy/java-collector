@@ -1,7 +1,7 @@
-package com.genesis.collector.mongo.template;
+package com.genesis.origin.mongo.repository;
 
-import com.genesis.collector.mongo.template.dao.JobDao;
-import com.genesis.collector.mongo.template.model.Job;
+import com.genesis.origin.mongo.repository.dao.JobRepository;
+import com.genesis.origin.mongo.repository.model.Job;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,20 +10,21 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.List;
 
 @SpringBootApplication
-public class MongoTemplateApplication implements CommandLineRunner {
+public class MongoRepositoryApplication implements CommandLineRunner {
 
 	@Autowired
-	private JobDao jobDao;
+	private JobRepository repository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(MongoTemplateApplication.class, args);
+		SpringApplication.run(MongoRepositoryApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		List<Job> jobs = jobDao.findAll();
+		List<Job> jobs = repository.findAll();
 		for (Job job:jobs) {
 			System.out.println(job);
 		}
+		System.out.println("------------------------------------");
 	}
 }
