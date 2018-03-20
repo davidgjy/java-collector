@@ -24,7 +24,7 @@ public class EchoClient {
         this.port = port;
     }
 
-    public void start()
+    public void start(String sendText)
             throws Exception {
         EventLoopGroup group = new NioEventLoopGroup();
         try {
@@ -37,7 +37,7 @@ public class EchoClient {
                         public void initChannel(SocketChannel ch)
                                 throws Exception {
                             ch.pipeline().addLast(
-                                    new EchoClientHandler());
+                                    new EchoClientHandler(sendText));
                         }
                     });
             ChannelFuture f = b.connect().sync();
@@ -58,7 +58,9 @@ public class EchoClient {
 
         final String host = args[0];
         final int port = Integer.parseInt(args[1]);
-        new EchoClient(host, port).start();
+
+        String sendText = "fuck you!";
+        new EchoClient(host, port).start(sendText);
     }
 }
 
