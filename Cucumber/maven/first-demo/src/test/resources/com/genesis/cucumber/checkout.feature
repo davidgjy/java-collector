@@ -6,9 +6,10 @@ Feature: Checkout
     Then the total price should be <total>c
 
     Examples:
-    | count | total | 
-    | 1     | 40    | 
+    | count | total |
+    | 1     | 40    |
     | 2     | 80    |
+    | 3     | 120    |
     
 #  Scenario: Two bananas scanned separately
 #    Given the price of a "banana" is 40c
