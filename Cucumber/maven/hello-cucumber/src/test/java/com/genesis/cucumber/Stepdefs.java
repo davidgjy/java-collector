@@ -30,8 +30,8 @@ public class Stepdefs {
     }
 
     @Then("^I should be told \"([^\"]*)\"$")
-    public void i_should_be_told(String expectedAnswer) {
-        assertEquals(expectedAnswer, actualAnswer);
+    public void i_should_be_told(String expected) {
+        assertEquals(expected, actualAnswer);
     }
 
     @Given("^^today is Friday$")
