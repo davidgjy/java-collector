@@ -7,8 +7,8 @@ import java.util.List;
  * @author KG(Kelvin Gu)
  * @ClassName: Example
  * @Package org.genesis.javacollect.mustache.demo
- * @Description: mustache example data provider object
- * @date 2018/8/6 14:05
+ * @Description: example
+ * @date 2018/8/6 14:37
  */
 public class Example {
     List<Item> items() {
