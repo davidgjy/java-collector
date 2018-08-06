@@ -20,8 +20,13 @@ public class Todo {
 
     // constructors, getters and setters
     public Todo(String title, String text) {
+        this(title, text, "");
+    }
+
+    public Todo(String title, String text, String createdOn) {
         this.title = title;
         this.text = text;
+        this.createdOn = createdOn;
     }
 
     public String getTitle() {
