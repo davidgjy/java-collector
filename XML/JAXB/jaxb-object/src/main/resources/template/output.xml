@@ -3,7 +3,7 @@
     <userName>KG</userName>
     <role>Super Admin</role>
     <menu>
-        <name>File</name>
+        <name>Setting</name>
         <id>1</id>
     </menu>
 </user>

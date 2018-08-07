@@ -16,9 +16,9 @@ import java.io.File;
  * @date 2018/8/7 10:36
  */
 public class JaxbUtil {
-    public static void convertToXml(Object obj, File file) {
+    public static <T> Boolean convertToXml(Object obj, Class<T> clz, File file) {
         try {
-            JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(clz);
             Marshaller marshaller = jaxbContext.createMarshaller();
             //格式化输出，即按标签自动换行，否则就是一行输出
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -29,8 +29,12 @@ public class JaxbUtil {
             marshaller.marshal(obj, file);
             //控制台输出
             marshaller.marshal(obj, System.out);
+
+            return true;
         } catch (JAXBException e) {
             e.printStackTrace();
+
+            return false;
         }
     }
 
