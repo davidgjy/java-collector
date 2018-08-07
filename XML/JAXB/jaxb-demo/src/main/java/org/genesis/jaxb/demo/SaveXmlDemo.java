@@ -16,7 +16,7 @@ import java.io.File;
  */
 public class SaveXmlDemo {
     public static void main(String[] args) {
-        User user = new User("陈本布衣", 2018, "超级管理员", "瞎哔哔");
+        User user = new User("KG", 2018, "Super Admin", "瞎哔哔");
         File file = new File("src/main/resources/template/output.xml");
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
