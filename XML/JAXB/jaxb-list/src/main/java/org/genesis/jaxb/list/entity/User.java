@@ -1,7 +1,11 @@
 package org.genesis.jaxb.list.entity;
 
+import org.genesis.jaxb.list.adapter.DateAdapter;
+
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -11,7 +15,7 @@ import java.util.List;
  * @Description: user entity
  * @date 2018/8/7 13:53
  */
-@XmlType(propOrder = {"userName", "role", "menus"})
+@XmlType(propOrder = {"userName", "role", "enrollDate", "menus"})
 @XmlRootElement(name = "user")
 @XmlAccessorOrder(XmlAccessOrder.ALPHABETICAL)
 public class User implements Serializable {
@@ -20,6 +24,7 @@ public class User implements Serializable {
     private int age;
     private String role;
     private String bibi;
+    private Date enrollDate;
     private List<Menu> menus;
 
     public User() {
@@ -65,6 +70,16 @@ public class User implements Serializable {
 
     public void setBibi(String bibi) {
         this.bibi = bibi;
+    }
+
+    @XmlElement
+    @XmlJavaTypeAdapter(DateAdapter.class)
+    public Date getEnrollDate() {
+        return enrollDate;
+    }
+
+    public void setEnrollDate(Date enrollDate) {
+        this.enrollDate = enrollDate;
     }
 
     @XmlElementWrapper(name = "menu")

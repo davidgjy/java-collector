@@ -6,6 +6,7 @@ import org.genesis.jaxb.list.util.JaxbUtil;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,6 +19,7 @@ import java.util.List;
 public class SaveXmlDemo {
     public static void main(String[] args) {
         User user = new User("KG", 2018, "Super Admin","master");
+        user.setEnrollDate(new Date());
         List<Menu> list1 = new ArrayList<>();
         Menu menu1 = new Menu("系统管理","9527");
         Menu child1 = new Menu("权限管理","9999");
@@ -39,5 +41,6 @@ public class SaveXmlDemo {
 
         File file = new File("src/main/resources/template/output.xml");
         JaxbUtil.convertToXml(user,file);
+        System.out.println("save xml successful!");
     }
 }
