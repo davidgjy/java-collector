@@ -12,7 +12,7 @@ import java.util.List;
  * @date 2018/8/7 13:54
  */
 @XmlRootElement
-public class Menu {
+public class Menu implements Cloneable {
     private String name;
     private String id;
     private List<Menu> child;
@@ -23,6 +23,11 @@ public class Menu {
     public Menu(String name, String id) {
         this.name = name;
         this.id = id;
+    }
+
+    @Override
+    public Menu clone() throws CloneNotSupportedException {
+        return (Menu)super.clone();
     }
 
     @XmlAttribute
