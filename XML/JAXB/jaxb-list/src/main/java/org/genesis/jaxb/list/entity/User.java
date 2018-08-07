@@ -67,6 +67,7 @@ public class User implements Serializable {
         this.bibi = bibi;
     }
 
+    @XmlElementWrapper(name = "menu")
     @XmlElement
     public List<Menu> getMenus() {
         return menus;
