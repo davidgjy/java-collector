@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<user age="2018">
+    <userName>Master HaKu</userName>
+    <role>Super Admin</role>
+    <menus id="9527" name="系统管理">
+        <child id="9999" name="权限管理"/>
+        <child id="2322" name="用户管理"/>
+    </menus>
+    <menus id="2222" name="参数配置">
+        <child id="3333" name="权限管理"/>
+        <child id="4444" name="用户管理"/>
+    </menus>
+</user>
