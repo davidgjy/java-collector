@@ -3,23 +3,23 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
   <typeAliases><!-- 别名 -->
-      <typeAlias alias="role" type="com.learn.ssm.chapter3.pojo.Role"/>
+      <typeAlias alias="role" type="org.genesis.javacollector.mybatis.train.pojo.Role"/>
   </typeAliases>
   <!-- 数据库环境 -->
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
-        <property name="driver" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/chapter3"/>
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/mybatis_train?useSSL=false"/>
         <property name="username" value="root"/>
-        <property name="password" value="123456"/>
+        <property name="password" value="mysql"/>
       </dataSource>
     </environment>
   </environments>
   <!-- 映射文件 -->
   <mappers>
-    <mapper resource="com/learn/ssm/chapter3/mapper/RoleMapper.xml"/>
-    <mapper class="com.learn.ssm.chapter3.mapper.RoleMapper2"/> 
+    <mapper resource="mapper/RoleMapper.xml"/>
+    <mapper class="org.genesis.javacollector.mybatis.train.dao.RoleMapper2"/>
   </mappers>
 </configuration>
