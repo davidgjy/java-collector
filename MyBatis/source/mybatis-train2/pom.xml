@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.genesis.javacollector</groupId>
-    <artifactId>mybatis-train</artifactId>
+    <artifactId>mybatis-train2</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -49,6 +49,13 @@
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -65,3 +72,4 @@
         </plugins>
     </build>
 </project>
+

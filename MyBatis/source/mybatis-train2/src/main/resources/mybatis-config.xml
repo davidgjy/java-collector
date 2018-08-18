@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="jdbc.properties">
+		<!-- <property name="database.driver" value="com.mysql.jdbc.Driver"/> <property 
+			name="database.url" value="jdbc:mysql://localhost:3306/mybatis_train"/> <property
+			name="database.username" value="root"/> <property name="database.password" 
+			value="mysql"/> -->
+	</properties>
+	<typeAliases><!-- 别名 -->
+		<!-- <typeAlias alias="role" type="org.genesis.javacollector.mybatis.train.pojo.Role"/> -->
+		<package name="org.genesis.javacollector.mybatis.train.pojo" />
+	</typeAliases>
+	<typeHandlers>
+		<!-- <typeHandler jdbcType="VARCHAR" javaType="string" handler="org.genesis.javacollector.mybatis.train.typehandler.MyTypeHandler"
+			/> -->
+		<package name="org.genesis.javacollector.mybatis.train.typehandler" />
+
+	</typeHandlers>
+	<!-- 数据库环境 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="org.genesis.javacollector.mybatis.train.datasource.DbcpDataSourceFactory">
+				<property name="driver" value="${database.driver}" />
+				<property name="url" value="${database.url}" />
+				<property name="username" value="${database.username}" />
+				<property name="password" value="${database.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+    <!-- 
+	<databaseIdProvider type="DB_VENDOR">
+		<property name="Oracle" value="oracle" />
+		<property name="MySQL" value="mysql" />
+		<property name="DB2" value="db2" />
+	</databaseIdProvider>
+	 -->
+	<databaseIdProvider
+		type="org.genesis.javacollector.mybatis.train.databaseidprovider.MyDatabaseIdProvider">
+		<property name="msg" value="自定义DatabaseIdProvider" />
+	</databaseIdProvider>
+	<mappers>
+		<package name="org.genesis.javacollector.mybatis.train.mapper" />
+	</mappers>
+</configuration>
