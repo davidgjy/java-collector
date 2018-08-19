@@ -1,6 +1,10 @@
 package proxy;
 import java.lang.reflect.Proxy;
 import static org.testng.Assert.*;
+
+import org.genesis.javacollector.spring.aop.introduce.ForumService;
+import org.genesis.javacollector.spring.aop.proxy.CglibProxy;
+import org.genesis.javacollector.spring.aop.proxy.ForumServiceImpl;
 import org.testng.annotations.*;
 
 public class ForumServiceTest {
@@ -8,11 +12,6 @@ public class ForumServiceTest {
 
 	@Test
 	public void proxy() {
-		// 业务类正常编码的测试
-		// ForumService forumService = new ForumServiceImpl();
-		// forumService.removeForum(10);
-		// forumService.removeTopic(1012);
-
 		// 使用JDK动态代理
 /*		ForumService target = new ForumServiceImpl();
 		PerformaceHandler handler = new PerformaceHandler(target);
