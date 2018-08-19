@@ -6,6 +6,7 @@
 	</properties>
 	<typeAliases><!-- 别名 -->
 		<!-- <typeAlias alias="role" type="org.genesis.javacollector.mybatis.train.pojo.Role"/> -->
+		<!-- scan alias under package -->
 		<package name="org.genesis.javacollector.mybatis.train.pojo" />
 	</typeAliases>
 	<typeHandlers>
