@@ -1,6 +1,7 @@
 package org.genesis.javacollector.mybatis.train.demo;
 
 import org.apache.ibatis.session.SqlSession;
+import org.genesis.javacollector.mybatis.train.helper.RoleHelper;
 import org.genesis.javacollector.mybatis.train.mapper.RoleMapper;
 import org.genesis.javacollector.mybatis.train.pojo.Role;
 import org.genesis.javacollector.mybatis.train.utils.SqlSessionFactoryUtils;
@@ -25,11 +26,8 @@ public class FindRolesByAnnotationDemo {
             sqlSession = SqlSessionFactoryUtils.openSqlSession();
             RoleMapper roleMapper = sqlSession.getMapper(RoleMapper.class);
             List<Role> roles = roleMapper.findRolesByAnnotation("1", "1");
-            System.out.println(roles.size());
-            for (Role role : roles) {
-                System.out.println(role);
-                System.out.println("-------------------------------");
-            }
+
+            RoleHelper.displayRoles(roles);
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
