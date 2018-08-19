@@ -46,4 +46,13 @@ public class Role implements Serializable {
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id=" + id +
+                ", roleName='" + roleName + '\'' +
+                ", note='" + note + '\'' +
+                '}';
+    }
 }
