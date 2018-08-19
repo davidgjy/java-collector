@@ -10,7 +10,7 @@
 	</settings>
 	
 	<typeAliases>
-		<package name="com.ssm.chapter5.pojo" />
+		<package name="org.genesis.javacollector.mybatis.train.pojo" />
 	</typeAliases>
 	<!-- 数据库环境 -->
 	<environments default="development">
@@ -26,7 +26,7 @@
 	</environments>
 
 	<mappers>
-		<package name="com.ssm.chapter5.mapper" />
-		<package name="com.ssm.chapter5.mapper2" />
+		<package name="org.genesis.javacollector.mybatis.train.mapper" />
+		<package name="org.genesis.javacollector.mybatis.train.mapper2" />
 	</mappers>
 </configuration>
