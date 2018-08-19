@@ -64,4 +64,17 @@ public class WorkCard {
 	public void setNote(String note) {
 		this.note = note;
 	}
+
+	@Override
+	public String toString() {
+		return "WorkCard{" + "\n" +
+				"id=" + id + "\n" +
+				", empId=" + empId + "\n" +
+				", realName='" + realName + '\'' + "\n" +
+				", department='" + department + '\'' + "\n" +
+				", mobile='" + mobile + '\'' + "\n" +
+				", position='" + position + '\'' + "\n" +
+				", note='" + note + '\'' + "\n" +
+				'}';
+	}
 }

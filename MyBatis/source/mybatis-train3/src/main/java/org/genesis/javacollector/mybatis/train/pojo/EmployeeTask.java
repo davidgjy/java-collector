@@ -47,4 +47,14 @@ public class EmployeeTask {
         this.note = note;
     }
 
+    @Override
+    public String toString() {
+        return "EmployeeTask{" + "\n" +
+                "id=" + id + "\n" +
+                ", empId=" + empId + "\n" +
+                ", task=" + task + "\n" +
+                ", taskName='" + taskName + '\'' + "\n" +
+                ", note='" + note + '\'' + "\n" +
+                '}';
+    }
 }

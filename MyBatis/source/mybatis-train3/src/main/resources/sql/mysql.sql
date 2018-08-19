@@ -53,7 +53,7 @@ CREATE TABLE t_employee
 (
    id                   INT(12) NOT NULL AUTO_INCREMENT,
    real_name            VARCHAR(60) NOT NULL,
-   sex                  INT(2) NOT NULL COMMENT '1 - ÄÐ 
+   sex                  INT(2) NOT NULL COMMENT '1 - ï¿½ï¿½ 
             0 -Å®',
    birthday             DATE NOT NULL,
    mobile               VARCHAR(20) NOT NULL,
@@ -147,3 +147,21 @@ ALTER TABLE t_male_health_form ADD CONSTRAINT FK_Reference_6 FOREIGN KEY (emp_id
       REFERENCES t_employee (id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE t_work_card ADD CONSTRAINT FK_Reference_7 FOREIGN KEY (emp_id)
       REFERENCES t_employee (id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+
+/*
+ Employee Data
+*/
+insert into t_employee_task(emp_id, task_id, task_name, note)
+values(1, 1, 'test task', 'test note');
+
+
+insert into t_task(title, context, note)
+values('task demo', 'task description', 'task note');
+
+insert into t_work_card(emp_id, real_name, department, mobile, POSITION, note)
+values(1, 'Kelvin Gu', 'IT', '123456789', 'Architect', 'work note');
+
+
+
+

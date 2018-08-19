@@ -112,5 +112,26 @@ public class Employee {
         this.employeeTaskList = employeeTaskList;
     }
 
+    @Override
+    public String toString() {
+        String employeeString = "Employee{" + "\n" +
+                "id=" + id + "\n" +
+                ", realName='" + realName + '\'' + "\n" +
+                ", sex=" + sex + "\n" +
+                ", birthday=" + birthday + "\n" +
+                ", mobile='" + mobile + '\'' + "\n" +
+                ", email='" + email + '\'' + "\n" +
+                ", position='" + position + '\'' + "\n" +
+                ", note='" + note + '\'' + "\n" +
+                '}';
 
+        String workCardString = " -- Work Card: " + workCard;
+
+        String employeeTaskListString = "  -- Employee Task List: \n";
+        for (EmployeeTask empTask : employeeTaskList) {
+            employeeTaskListString += "       " + empTask + "\n";
+        }
+
+        return employeeString + "\n" + workCardString + "\n" + employeeTaskListString;
+    }
 }
