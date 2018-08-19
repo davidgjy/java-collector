@@ -8,8 +8,6 @@ import org.genesis.javacollector.spring.aop.proxy.ForumServiceImpl;
 import org.testng.annotations.*;
 
 public class ForumServiceTest {
-
-
 	@Test
 	public void proxy() {
 		//使用CGLib动态代理
@@ -19,5 +17,5 @@ public class ForumServiceTest {
 		forumService.removeTopic(1023);
 		
 	}
-	 
 }
+
