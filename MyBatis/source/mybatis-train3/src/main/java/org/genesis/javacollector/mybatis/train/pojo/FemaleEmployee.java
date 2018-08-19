@@ -2,15 +2,15 @@ package org.genesis.javacollector.mybatis.train.pojo;
 
 public class FemaleEmployee extends Employee {
 
-	private FemaleHealthForm femaleHealthForm = null;
+    private FemaleHealthForm femaleHealthForm = null;
 
-	public FemaleHealthForm getFemaleHealthForm() {
-		return femaleHealthForm;
-	}
+    public FemaleHealthForm getFemaleHealthForm() {
+        return femaleHealthForm;
+    }
 
-	public void setFemaleHealthForm(FemaleHealthForm femaleHealthForm) {
-		this.femaleHealthForm = femaleHealthForm;
-	}
-	
-	
+    public void setFemaleHealthForm(FemaleHealthForm femaleHealthForm) {
+        this.femaleHealthForm = femaleHealthForm;
+    }
+
+
 }

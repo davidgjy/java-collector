@@ -2,43 +2,53 @@ package org.genesis.javacollector.mybatis.train.pojo2;
 
 import java.util.List;
 
+/**
+ * @Name: Role2
+ * @Description: role2 pojo
+ * @author KG(Kelvin Gu)
+ * @date 08-19-2018 05:14:09
+*/
 public class Role2 {
-	private Long id;
-	private String roleName;
-	private String note;
-	// �����û���Ϣ��һ�Զ����
-	private List<User2> userList;
+    private Long id;
+    private String roleName;
+    private String note;
 
-	public Long getId() {
-		return id;
-	}
+    /**
+     * 关联用户信息，一对多关联
+     */
+    private List<User2> userList;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getRoleName() {
-		return roleName;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-	}
+    public String getRoleName() {
+        return roleName;
+    }
 
-	public String getNote() {
-		return note;
-	}
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
 
-	public void setNote(String note) {
-		this.note = note;
-	}
+    public String getNote() {
+        return note;
+    }
 
-	public List<User2> getUserList() {
-		return userList;
-	}
+    public void setNote(String note) {
+        this.note = note;
+    }
 
-	public void setUserList(List<User2> userList) {
-		this.userList = userList;
-	}
+    public List<User2> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User2> userList) {
+        this.userList = userList;
+    }
 
 }
+

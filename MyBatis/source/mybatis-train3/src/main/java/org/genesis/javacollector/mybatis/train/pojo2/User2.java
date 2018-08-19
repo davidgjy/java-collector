@@ -1,82 +1,89 @@
 package org.genesis.javacollector.mybatis.train.pojo2;
 
+
+import org.genesis.javacollector.mybatis.train.enumeration.SexEnum;
+
 import java.util.List;
 
-import com.ssm.chapter5.enumeration.SexEnum;
+import org.genesis.javacollector.mybatis.train.enumeration.SexEnum;
 
 public class User2 {
-	private Long id;
-	private String userName;
-	private String realName;
-	private SexEnum sex;
-	private String moble;
-	private String email;
-	private String note;
-	// �Խ�ɫһ�Զ����
-	private List<Role2> roleList;
+    private Long id;
+    private String userName;
+    private String realName;
+    private SexEnum sex;
+    private String moble;
+    private String email;
+    private String note;
 
-	public Long getId() {
-		return id;
-	}
+    /**
+     * 对角色一对多关联
+     */
+    private List<Role2> roleList;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getUserName() {
-		return userName;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public String getRealName() {
-		return realName;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	public void setRealName(String realName) {
-		this.realName = realName;
-	}
+    public String getRealName() {
+        return realName;
+    }
 
-	public SexEnum getSex() {
-		return sex;
-	}
+    public void setRealName(String realName) {
+        this.realName = realName;
+    }
 
-	public void setSex(SexEnum sex) {
-		this.sex = sex;
-	}
+    public SexEnum getSex() {
+        return sex;
+    }
 
-	public String getMoble() {
-		return moble;
-	}
+    public void setSex(SexEnum sex) {
+        this.sex = sex;
+    }
 
-	public void setMoble(String moble) {
-		this.moble = moble;
-	}
+    public String getMoble() {
+        return moble;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setMoble(String moble) {
+        this.moble = moble;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getNote() {
-		return note;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setNote(String note) {
-		this.note = note;
-	}
+    public String getNote() {
+        return note;
+    }
 
-	public List<Role2> getRoleList() {
-		return roleList;
-	}
+    public void setNote(String note) {
+        this.note = note;
+    }
 
-	public void setRoleList(List<Role2> roleList) {
-		this.roleList = roleList;
-	}
+    public List<Role2> getRoleList() {
+        return roleList;
+    }
+
+    public void setRoleList(List<Role2> roleList) {
+        this.roleList = roleList;
+    }
 
 }
+

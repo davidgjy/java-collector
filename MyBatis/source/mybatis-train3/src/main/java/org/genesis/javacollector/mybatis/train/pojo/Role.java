@@ -4,6 +4,12 @@ import java.io.Serializable;
 
 import org.apache.ibatis.type.Alias;
 
+/**
+ * @Name: Role
+ * @Description: role pojo
+ * @author KG(Kelvin Gu)
+ * @date 08-19-2018 05:13:02
+*/
 @Alias("role")
 public class Role implements Serializable {
 

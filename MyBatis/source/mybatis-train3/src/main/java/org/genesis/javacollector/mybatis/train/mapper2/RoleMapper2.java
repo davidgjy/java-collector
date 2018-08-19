@@ -1,12 +1,12 @@
 package org.genesis.javacollector.mybatis.train.mapper2;
 
-import java.util.List;
+import org.genesis.javacollector.mybatis.train.pojo2.Role2;
 
-import com.ssm.chapter5.pojo2.Role2;
+import java.util.List;
 
 public interface RoleMapper2 {
 	
-	public Role2 getRole(Long id);
+	Role2 getRole(Long id);
 	
-	public List<Role2> findRoleByUserId(Long userId);
+	List<Role2> findRoleByUserId(Long userId);
 }
