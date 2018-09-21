@@ -31,9 +31,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	private UserDetailsService customUserDetailsService;
-	
-//	@Autowired
-//	private DataSource dataSource;
+
+	/**
+	 * persistent token
+	 */
+	@Autowired
+	private DataSource dataSource;
 	
 	@Bean
     public PasswordEncoder passwordEncoder() {
@@ -71,20 +74,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             	.deleteCookies("my-remember-me-cookie")
                 .permitAll()
                 .and()
-//             .rememberMe()
-//             	//.key("my-secure-key")
-//             	.rememberMeCookieName("my-remember-me-cookie")
-//             	.tokenRepository(persistentTokenRepository())
-//             	.tokenValiditySeconds(24 * 60 * 60)
-//             	.and()
+             .rememberMe()
+             	.key("my-secure-key")
+             	.rememberMeCookieName("my-remember-me-cookie")
+             	.tokenRepository(persistentTokenRepository())
+             	.tokenValiditySeconds(24 * 60 * 60)
+             	.and()
             .exceptionHandling()
             	.accessDeniedPage("/403")
              	;
     }
-    
-//    PersistentTokenRepository persistentTokenRepository(){
-//    	JdbcTokenRepositoryImpl tokenRepositoryImpl = new JdbcTokenRepositoryImpl();
-//    	tokenRepositoryImpl.setDataSource(dataSource);
-//    	return tokenRepositoryImpl;
-//    }
+
+	/**
+	 * persistent token by jdbc
+	 * @return
+	 */
+	PersistentTokenRepository persistentTokenRepository(){
+    	JdbcTokenRepositoryImpl tokenRepositoryImpl = new JdbcTokenRepositoryImpl();
+    	tokenRepositoryImpl.setDataSource(dataSource);
+    	return tokenRepositoryImpl;
+    }
 }

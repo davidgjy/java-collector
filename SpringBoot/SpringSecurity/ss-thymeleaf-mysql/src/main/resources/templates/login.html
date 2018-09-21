@@ -10,8 +10,9 @@
 	<div th:if="${param.error}">
 		<span>Invalid Email and Password.</span>
 	</div>
-	<input type="email" name="username" placeholder="Email" />
-	<input type="password" name="password" placeholder="Password" />
+	<input type="email" name="username" placeholder="Email" value="admin@gmail.com"/>
+	<input type="password" name="password" placeholder="Password" value="admin" />
+	<input type="checkbox" name="remember-me"> Remember Me
 	<button type="submit">LogIn</button>
 </form>
 </body>
