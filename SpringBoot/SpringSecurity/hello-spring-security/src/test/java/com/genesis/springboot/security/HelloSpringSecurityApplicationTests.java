@@ -1,4 +1,4 @@
-package com.genesis.springboot.hellospringsecurity;
+package com.genesis.springboot.security;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
