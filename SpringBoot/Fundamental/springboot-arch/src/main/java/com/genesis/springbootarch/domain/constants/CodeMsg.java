@@ -19,21 +19,11 @@ public interface CodeMsg {
     }
 
     /**
-     * all report job codes are started with 1
+     * exceptions and codes
      */
-    interface REPORT_FILE_NOT_FOUND {
-        String CODE = "1000";
-        String MSG = "Report File Not Found";
-    }
-
-    interface REPORT_FORMAT_ERROR {
-        String CODE = "1001";
-        String MSG = "Report Format Error";
-    }
-
-    interface REPORT_IMPORT_ERROR {
-        String CODE = "1002";
-        String MSG = "Report Import Error";
+    interface NULL_POINTER_EXCEPTION {
+        String CODE = "5001";
+        String MSG = "Null Pointer Exception";
     }
 }
 
