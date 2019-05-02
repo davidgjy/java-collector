@@ -1,4 +1,4 @@
-package com.xiaopotian.Controller;
+package com.genesis.poi.controller;
 
 import java.io.Serializable;
 import java.util.List;
