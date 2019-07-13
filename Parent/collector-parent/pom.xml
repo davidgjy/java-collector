@@ -19,6 +19,7 @@
 
         <!-- my customized dependencies -->
         <collector.common.domain.version>1.0-SNAPSHOT</collector.common.domain.version>
+        <collector.common.util.version>1.0-SNAPSHOT</collector.common.util.version>
     </properties>
 
     <dependencyManagement>
@@ -28,6 +29,11 @@
                 <groupId>org.genesis</groupId>
                 <artifactId>collector-common-domain</artifactId>
                 <version>${collector.common.domain.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.genesis</groupId>
+                <artifactId>collector-common-util</artifactId>
+                <version>${collector.common.util.version}</version>
             </dependency>
 
             <!-- spring boot related -->

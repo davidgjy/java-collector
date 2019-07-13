@@ -16,13 +16,13 @@ import java.util.List;
 @Service
 public class MockServiceImpl implements MockService {
     @Override
-    public List<User> getUserList() {
+    public List<User> mockUsers(int capacity) {
 
         List<User> users = new ArrayList<>();
 
-        users.add(new User(1, "Peter"));
-        users.add(new User(2, "David"));
-        users.add(new User(3, "Kelvin"));
+        for (int i=1;i<=capacity;i++) {
+            users.add(new User(i, String.format("User%d", i)));
+        }
 
         return users;
     }

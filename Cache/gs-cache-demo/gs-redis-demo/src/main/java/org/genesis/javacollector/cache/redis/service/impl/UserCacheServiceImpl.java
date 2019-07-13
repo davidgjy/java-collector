@@ -14,6 +14,7 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,39 +27,60 @@ import java.util.List;
 public class UserCacheServiceImpl implements UserCacheService {
 
     @Autowired
-    private RedisTemplate redisTemplate;
+    private StringRedisTemplate redisTemplate;
 
     @Autowired
     private MockService mockService;
 
-    @Autowired(required = false)
-    public void setRedisTemplate(StringRedisTemplate redisTemplate) {
-        RedisSerializer stringSerializer = new StringRedisSerializer();
-        redisTemplate.setKeySerializer(stringSerializer);
-        redisTemplate.setHashKeySerializer(stringSerializer);
-
-        this.redisTemplate = redisTemplate;
-    }
+//    @Autowired(required = false)
+//    public void setRedisTemplate(StringRedisTemplate redisTemplate) {
+//        RedisSerializer stringSerializer = new StringRedisSerializer();
+//        redisTemplate.setKeySerializer(stringSerializer);
+//        redisTemplate.setHashKeySerializer(stringSerializer);
+//
+//        this.redisTemplate = redisTemplate;
+//    }
 
     @Override
-    public List<User> getUsersFromCache() {
-        return null;
+    public List<String> getUsersFromCache() {
+
+        List<String> users = new ArrayList<>();
+
+        for (int i=1;i<=1000;i++) {
+            String user = (String)redisTemplate.opsForValue().get(String.valueOf(i));
+            users.add(user);
+        }
+
+        // the object is null
+//        List<Object> results = redisTemplate.executePipelined(
+//                new RedisCallback<Object>() {
+//                    @Override
+//                    public Object doInRedis(RedisConnection connection) throws DataAccessException {
+//                        StringRedisConnection stringRedisConn = (StringRedisConnection)connection;
+//                        for(int i=1; i<= 1000; i++) {
+//                            String user = stringRedisConn.get(String.valueOf(i));
+//                            users.add(user);
+//                        }
+//                        return null;
+//                    }
+//                });
+
+        return users;
     }
 
     @Override
     public void setUsersToCahce() {
-        List<User> users = mockService.getUserList();
+        List<User> users = mockService.mockUsers(1000);
 
         List<Object> redisResult = redisTemplate.executePipelined(new RedisCallback<Object>() {
             @Override
             public String doInRedis(RedisConnection redisConnection) throws DataAccessException {
                 for (User user : users) {
-                    StringRedisConnection stringRedisConnection =(StringRedisConnection)redisConnection;
+                    StringRedisConnection stringRedisConnection = (StringRedisConnection) redisConnection;
                     stringRedisConnection.set(String.format("%d", user.getId()), user.toString());
                 }
                 return null;
             }
         });
-
     }
 }

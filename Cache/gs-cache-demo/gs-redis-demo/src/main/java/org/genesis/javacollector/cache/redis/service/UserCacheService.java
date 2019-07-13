@@ -13,7 +13,7 @@ import java.util.List;
 
 public interface UserCacheService {
 
-    List<User> getUsersFromCache();
+    List<String> getUsersFromCache();
 
     void setUsersToCahce();
 }

@@ -12,6 +12,6 @@ import java.util.List;
  */
 
 public interface MockService {
-    List<User> getUserList();
+    List<User> mockUsers(int capacity);
 }
 
