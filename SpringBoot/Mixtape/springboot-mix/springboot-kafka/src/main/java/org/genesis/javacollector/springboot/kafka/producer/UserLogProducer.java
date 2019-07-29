@@ -1,6 +1,7 @@
 package org.genesis.javacollector.springboot.kafka.producer;
 
 import com.alibaba.fastjson.JSON;
+import org.genesis.javacollector.common.util.log.LogUtil;
 import org.genesis.javacollector.springboot.kafka.domain.UserLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -20,14 +21,16 @@ public class UserLogProducer {
 
     /**
      * 发送数据
+     *
      * @param userid
      */
-    public void sendLog(String userid){
+    public void sendLog(String userid) {
         UserLog userLog = new UserLog();
-        userLog.setUsername("jhp");
+        userLog.setUsername("KG");
         userLog.setUserid(userid);
-        userLog.setState("0");
-        System.err.println("发送用户日志数据:"+userLog);
+        userLog.setState("9");
+        LogUtil.info("Sending user log info:" + userLog);
+//        System.err.println("Sending user log info:" + userLog);
         kafkaTemplate.send("user-log", JSON.toJSONString(userLog));
     }
 }

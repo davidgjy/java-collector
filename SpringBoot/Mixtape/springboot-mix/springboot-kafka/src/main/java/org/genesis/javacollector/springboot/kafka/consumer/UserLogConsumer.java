@@ -17,14 +17,15 @@ import java.util.Optional;
 @Component
 public class UserLogConsumer {
     @KafkaListener(topics = {"user-log"})
-    public void consumer(ConsumerRecord<?,?> consumerRecord){
+    public void consumer(ConsumerRecord<?, ?> consumerRecord) {
         //判断是否为null
         Optional<?> kafkaMessage = Optional.ofNullable(consumerRecord.value());
         LogUtil.info(">>>>>>>>>> record =" + kafkaMessage);
-        if(kafkaMessage.isPresent()){
+        if (kafkaMessage.isPresent()) {
             //得到Optional实例中的值
             Object message = kafkaMessage.get();
-            System.err.println("消费消息:"+message);
+            LogUtil.info("Consuming user log info:" + message);
+//            System.err.println("Consuming user log info:" + message);
         }
     }
 }
