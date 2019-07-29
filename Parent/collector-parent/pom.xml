@@ -16,6 +16,8 @@
 
         <!-- third party dependencies -->
         <swagger.version>2.6.1</swagger.version>
+        <kafka.version>2.2.7.RELEASE</kafka.version>
+        <fastjson.version>1.2.58</fastjson.version>
 
         <!-- my customized dependencies -->
         <collector.common.domain.version>1.0-SNAPSHOT</collector.common.domain.version>
@@ -63,6 +65,20 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger.version}</version>
+            </dependency>
+
+            <!-- kafka -->
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${kafka.version}</version>
+            </dependency>
+
+            <!-- fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
