@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.genesis.javacollector.springboot.starter.demo.config.ServiceAutoConfiguration
