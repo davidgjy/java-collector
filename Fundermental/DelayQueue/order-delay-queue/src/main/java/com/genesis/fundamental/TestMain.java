@@ -21,7 +21,7 @@ public class TestMain {
 
     public static void main(String[] args) throws InterruptedException {
         pool = new ThreadPoolExecutor(1, 2, 1000, TimeUnit.MILLISECONDS,
-                new SynchronousQueue<Runnable>(),Executors.defaultThreadFactory(),new ThreadPoolExecutor.AbortPolicy());
+                new SynchronousQueue<>(),Executors.defaultThreadFactory(),new ThreadPoolExecutor.AbortPolicy());
 
         // 创建生产者线程
         pool.execute(new ProducerThread(20, queue));
