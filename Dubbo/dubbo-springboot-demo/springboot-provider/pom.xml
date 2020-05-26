@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <artifactId>dubbo-springboot-demo</artifactId>
         <groupId>org.genesis</groupId>
@@ -10,6 +11,11 @@
     </parent>
 
     <artifactId>springboot-provider</artifactId>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>sample-api</module>
+        <module>sample-provider</module>
+    </modules>
 
 </project>
