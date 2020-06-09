@@ -1,8 +1,7 @@
 package org.genesis.javacollector.springcloud.oauth.service;
 
-
-import com.example.demo.entity.User;
-import com.example.demo.repository.UserRepository;
+import org.genesis.javacollector.springcloud.oauth.entity.User;
+import org.genesis.javacollector.springcloud.oauth.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -11,7 +10,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 /**
- * @author longzhonghua
+ * @author KG
  * @data 2018/11/04 22:30
  */
 
@@ -19,13 +18,12 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserRepository userRepository ;
+    private UserRepository userRepository;
 
     @Override
     public void save(User user) {
         userRepository.save(user);
     }
-
 
 
 }

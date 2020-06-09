@@ -1,10 +1,11 @@
 package org.genesis.javacollector.springcloud.oauth.service;
 
-import com.example.demo.entity.User;
+
+import org.genesis.javacollector.springcloud.oauth.entity.User;
 import org.springframework.data.domain.Page;
 
 /**
- * @author longzhonghua
+ * @author KG
  * @data 2018/11/04 22:30
  */
 
