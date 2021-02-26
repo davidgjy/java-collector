@@ -12,7 +12,7 @@
     <properties>
         <!-- spring boot related -->
         <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.13.1</junit.version>
 
         <!-- third party dependencies -->
         <swagger.version>2.6.1</swagger.version>
