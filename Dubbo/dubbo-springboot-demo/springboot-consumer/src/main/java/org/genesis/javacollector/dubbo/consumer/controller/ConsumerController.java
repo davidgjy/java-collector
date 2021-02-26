@@ -22,7 +22,7 @@ public class ConsumerController {
 
     @GetMapping(value = "/test")
     public void test() {
-        String hello = helloService.sayHello("KG2");
+        String hello = helloService.sayHello("KG");
         log.info(hello);
     }
 }
